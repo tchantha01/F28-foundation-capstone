@@ -37,13 +37,20 @@ module.exports = {
 
     updateGuest: (req, res) => {
         
-        // console.log(req.params)
-       
+        // console.log(req.params.id)
         // console.log(req.body)
         
-        const index = guest.findIndex(element => element.id === +req.params.id)
-         
-        const {type} = req.body
+        const index = guest.findIndex(element => element.id === req.params.id)
+        
+        const {dish, comment} = req.body 
+        
+        let updateGuestObj = {
+            id: guestId,
+            dish: dish,
+            comment: comment
+        }
+
+        guest.push(updateGuestObj)
 
         
         
