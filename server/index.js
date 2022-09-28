@@ -14,9 +14,12 @@ app.use(express.json())
 app.use(cors())
 
 
-const {getGuest} = require('./controller')
+const {getGuest, addGuest, deleteGuest, updateGuest} = require('./controller')
 
 app.get('/getGuest', getGuest)
+app.post('/addGuest', addGuest)
+app.delete('/deleteGuest/:id', deleteGuest)
+app.put('/updateGuest/:id', updateGuest)
 
 
 

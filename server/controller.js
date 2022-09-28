@@ -1,11 +1,45 @@
 const guest = require('./db.json')
 
+let guestId = 4
 
 //Get, Put, Delete, Post
 
 module.exports = {
     getGuest: (req, res) => {
         res.status(200).send(guest)
+    },
+
+    addGuest: (req, res) => {
+        const {name, dish, comment} = req.body
+
+        let newGuestObj = {
+            id: guestId,
+            name: name,
+            dish: dish,
+            comment: comment
+        }
+
+        guest.push(newGuestObj)
+        
+        guestId++
+
+        res.status(200).send(guest)
+
+    },
+
+    deleteGuest: (req, res) => {
+        const index = guest.findIndex(element => element.id === req.params.id)
+
+        guest.splice(index, 1)
+
+        res.status(200).send(guest)
+    },
+
+    updateGuest: (req, res) => {
+        const index = guest.findIndex(element => element.id === req.params.id)
+
+        res.status(200).send(guest)
+
     }
 }
 
