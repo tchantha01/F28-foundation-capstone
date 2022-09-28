@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "Toky Chanthavong",
+        "dish": "turkey and stuffing",
+        "comment": "Since we're hosting, we will take care of the turkey and stuffing"
+
+    },
+
+    {
+        "id": 2,
+        "name": "Audrey",
+        "dish": "pumpkin pie",
+        "comment": "Will be bringing 2 pumpkin pies"
+
+    },
+
+    {
+        "id": 3,
+        "name": "Sothea (mother in law)",
+        "dish": "ginger crab",
+        "comment": "Does anyone have an extra serving tray?"
+
+    }
+
+
+
+]

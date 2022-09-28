@@ -1,17 +1,22 @@
-require('dotenv').config()
+//Import
+// require('dotenv').config()
 const express = require('express')
-const app = express()
 const cors = require('cors')
-const {SERVER_PORT} =process.env
+
+const app = express()
+// const {SERVER_PORT} =process.env
 
 
 
 
-
+//Middleware
 app.use(express.json())
 app.use(cors())
 
 
+const {getGuest} = require('./controller')
+
+app.get('/getGuest', getGuest)
 
 
 
@@ -28,4 +33,5 @@ app.use(cors())
 
 
 
-app.listen(SERVER_PORT, () => console.log(`up on ${SERVER_PORT}`))
+
+app.listen(5678, () => console.log(`Running on port 5678`))
