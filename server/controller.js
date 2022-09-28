@@ -28,7 +28,7 @@ module.exports = {
     },
 
     deleteGuest: (req, res) => {
-        const index = guest.findIndex(element => element.id === req.params.id)
+        const index = guest.findIndex(element => element.id === +req.params.id)
 
         guest.splice(index, 1)
 
@@ -36,8 +36,17 @@ module.exports = {
     },
 
     updateGuest: (req, res) => {
-        const index = guest.findIndex(element => element.id === req.params.id)
+        
+        // console.log(req.params)
+       
+        // console.log(req.body)
+        
+        const index = guest.findIndex(element => element.id === +req.params.id)
+         
+        const {type} = req.body
 
+        
+        
         res.status(200).send(guest)
 
     }
