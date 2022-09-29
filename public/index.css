@@ -21,7 +21,7 @@ form {
   }
   
   /* Set a style for all buttons */
-  button {
+  /* button {
     background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
@@ -29,7 +29,7 @@ form {
     border: none;
     cursor: pointer;
     width: 100%;
-  }
+  } */
   
   /* Add a hover effect for buttons */
   button:hover {

@@ -35,11 +35,30 @@ const createGuestCard = (guest) => {
         <p>${guest.name}</p>
         <p>${guest.dish}</p>
         <p>${guest.comment}</p>
-        
-        <button>Delete</button> 
+        <button onClick="updateGuest(${guest.id})">Update</button>
+        <button onclick="deleteGuest(${guest.id})">Delete</button> 
+        <br><br/>
         
         `
     showGuest.appendChild(guestCard)
+}
+
+const deleteGuest = (id) => {
+    axios.delete(`${baseURL}/deleteGuest/${id}`)
+        .then((res) => {
+            showGuest.innerHTML = ""
+            displayGuest(res.data)
+        })
+
+}
+
+const updateGuest = (id, type) => {
+    axios.put(`${baseURL}/updateGuest/${id}`, updateGuestObj) 
+    .then((res) => {
+        showGuest.innerHTML = ""
+        displayGuest(res.data)
+    })
+
 }
 
 
