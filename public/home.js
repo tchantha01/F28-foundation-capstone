@@ -2,6 +2,7 @@
 const baseURL = "http://localhost:5678"
 
 const showGuest = document.querySelector('#guestDisplay')
+const addButton = document.querySelector('#addGuest')
 
 // Axios request to get guest array
 // Loop over that array
@@ -52,8 +53,9 @@ const deleteGuest = (id) => {
 
 }
 
-const updateGuest = (id, type) => {
-    axios.put(`${baseURL}/updateGuest/${id}`, updateGuestObj) 
+const updateGuest = (id, param) => {
+    axios.put(`${baseURL}/updateGuest/${id}`, updateGuestObj)
+
     .then((res) => {
         showGuest.innerHTML = ""
         displayGuest(res.data)
@@ -61,7 +63,32 @@ const updateGuest = (id, type) => {
 
 }
 
+const addGuest = () => {
+    let nameInput = document.querySelector('#nameInput')
+    let dishInput = document.querySelector('#dishInput')
+    let commentInput = document.querySelector('#commentInput')
 
+    let newGuest = {
+        name: nameInput.value,
+        dish: dishInput.value,
+        comment: commentInput.value
+
+    }
+
+    axios.post(`${baseURL}/addGuest`, newGuest) 
+    .then((res) => {
+        showGuest.innerHTML = ""
+
+        nameInput.value = ""
+        dishInput.value = ""
+        commentInput.value = ""
+
+        displayGuest(res.data)
+    })
+}
+
+addButton.addEventListener("click", updateGuest)
+addButton.addEventListener("click", addGuest)
 getAllGuest()
 
 
