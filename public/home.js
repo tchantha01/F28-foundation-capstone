@@ -2,12 +2,8 @@
 const baseURL = "http://localhost:5678"
 
 const showGuest = document.querySelector('#guestDisplay')
-const addButton = document.querySelector('#addGuest')
-
-// Axios request to get guest array
-// Loop over that array
-// Create guest cards for each guest in the array
-
+const addGuestBtn = document.querySelector('#addGuest')
+const updateGuestBtn = document.querySelector('#updateGuest')
 
 
 
@@ -28,6 +24,31 @@ const displayGuest = (arr) => {
 }
 }
 
+const updateGuest = (id, name, dish, comment) => {
+    let nameInput = document.querySelector('#nameInput')
+    let dishInput = document.querySelector('#dishInput')
+    let commentInput = document.querySelector('#commentInput')
+    
+    let updateGuestObj = {
+        id: id,
+        name: nameInput.value,
+        dish: dishInput.value,
+        comment: commentInput.value
+
+    }
+
+    console.log(updateGuestObj)
+    
+    axios.put(`${baseURL}/updateGuest/${id}`, updateGuestObj)
+ 
+    .then((res) => {
+        showGuest.innerHTML = ""
+        
+        displayGuest(res.data)
+    })
+
+}
+
 const createGuestCard = (guest) => {
     const guestCard = document.createElement("section")
     guestCard.classList.add('guest-card')
@@ -36,7 +57,7 @@ const createGuestCard = (guest) => {
         <p>${guest.name}</p>
         <p>${guest.dish}</p>
         <p>${guest.comment}</p>
-        <button onClick="updateGuest(${guest.id})">Update</button>
+       
         <button onclick="deleteGuest(${guest.id})">Delete</button> 
         <br><br/>
         
@@ -44,22 +65,14 @@ const createGuestCard = (guest) => {
     showGuest.appendChild(guestCard)
 }
 
+//  <button onclick="updateGuest('${guest.id}', '${guest.name}', '${guest.dish}', '${guest.comment}')">Update</button>
+
 const deleteGuest = (id) => {
     axios.delete(`${baseURL}/deleteGuest/${id}`)
         .then((res) => {
             showGuest.innerHTML = ""
             displayGuest(res.data)
         })
-
-}
-
-const updateGuest = (id, param) => {
-    axios.put(`${baseURL}/updateGuest/${id}`, updateGuestObj)
-
-    .then((res) => {
-        showGuest.innerHTML = ""
-        displayGuest(res.data)
-    })
 
 }
 
@@ -87,8 +100,14 @@ const addGuest = () => {
     })
 }
 
-addButton.addEventListener("click", updateGuest)
-addButton.addEventListener("click", addGuest)
+updateGuestBtn.addEventListener("click", updateGuest)
+addGuestBtn.addEventListener("click", addGuest)
+
 getAllGuest()
 
+
+
+
+
+   
 
