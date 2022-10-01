@@ -3,7 +3,7 @@ const baseURL = "http://localhost:5678"
 
 const showGuest = document.querySelector('#guestDisplay')
 const addGuestBtn = document.querySelector('#addGuest')
-const updateGuestBtn = document.querySelector('#updateGuest')
+const updateGuestBtn = document.querySelector('#updateGuestCard')
 
 
 
@@ -24,22 +24,23 @@ const displayGuest = (arr) => {
 }
 }
 
-const updateGuest = (id, name, dish, comment) => {
-    let nameInput = document.querySelector('#nameInput')
-    let dishInput = document.querySelector('#dishInput')
-    let commentInput = document.querySelector('#commentInput')
+const updateGuest = (event) => {
+    event.preventDefault()
+    let nameInput = document.querySelector('#nameInput1')
+    let dishInput = document.querySelector('#dishInput1')
+    let commentInput = document.querySelector('#commentInput1')
     
     let updateGuestObj = {
-        id: id,
+        
         name: nameInput.value,
         dish: dishInput.value,
         comment: commentInput.value
 
     }
-
+    console.log(nameInput.value)
     console.log(updateGuestObj)
     
-    axios.put(`${baseURL}/updateGuest/${id}`, updateGuestObj)
+    axios.put(`${baseURL}/updateGuest/${nameInput.value}`, updateGuestObj)
  
     .then((res) => {
         showGuest.innerHTML = ""
@@ -100,7 +101,7 @@ const addGuest = () => {
     })
 }
 
-updateGuestBtn.addEventListener("click", updateGuest)
+updateGuestBtn.addEventListener("submit", updateGuest)
 addGuestBtn.addEventListener("click", addGuest)
 
 getAllGuest()
