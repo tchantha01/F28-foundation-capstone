@@ -3,7 +3,7 @@ const baseURL = "http://localhost:5678"
 
 const showGuest = document.querySelector('#guestDisplay')
 const addGuestBtn = document.querySelector('#addGuest')
-const updateGuestBtn = document.querySelector('#updateGuestCard')
+const updateGuestBtn = document.querySelector('#updateGuest')
 
 
 
@@ -101,8 +101,8 @@ const addGuest = () => {
     })
 }
 
-updateGuestBtn.addEventListener("submit", updateGuest)
-addGuestBtn.addEventListener("click", addGuest)
+updateGuestBtn.addEventListener("click", updateGuest)
+// addGuestBtn.addEventListener("submit", addGuest)
 
 getAllGuest()
 

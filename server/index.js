@@ -19,7 +19,7 @@ const {getGuest, addGuest, deleteGuest, updateGuest} = require('./controller')
 app.get('/getGuest', getGuest)
 app.post('/addGuest', addGuest)
 app.delete('/deleteGuest/:id', deleteGuest)
-app.put('/updateGuest/:id', updateGuest)
+app.put('/updateGuest/:name', updateGuest)
 
 
 
