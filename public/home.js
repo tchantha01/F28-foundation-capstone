@@ -55,6 +55,7 @@ const createGuestCard = (guest) => {
     guestCard.classList.add('guest-card')
 
     guestCard.innerHTML = `
+        <h2>Recipes</h2>   
         <p>${guest.name}</p>
         <p>${guest.dish}</p>
         <p>${guest.comment}</p>
