@@ -15,15 +15,16 @@ app.use(cors())
 
 
 const {getGuest, addGuest, deleteGuest, updateGuest} = require('./controller')
+const {getPlayer, addPlayer, deletePlayer} = require('./controller')
 
 app.get('/getGuest', getGuest)
 app.post('/addGuest', addGuest)
 app.delete('/deleteGuest/:id', deleteGuest)
 app.put('/updateGuest/:name', updateGuest)
 
-
-
-
+app.get('/getPlayer', getPlayer)
+app.post('/addPlayer', addPlayer)
+app.delete('/deletePlayer/:id', deletePlayer)
 
 
 

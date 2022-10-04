@@ -53,6 +53,16 @@ div {
 
 }
 
+.player-card {
+  background-color: antiquewhite;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 100px;
+  border: 15px solid darkorange;
+  padding: 30px;
+  margin: 10px;
+
+}
+
 
 #addToGuestCard {
   background-color: antiquewhite;
@@ -64,7 +74,15 @@ div {
   margin: 10px;
 }
 
-
+#addToPlayerCard {
+  background-color: antiquewhite;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 200px;
+  border: 15px solid darkorange;
+  padding: 30px;
+  margin: 10px;
+}
 
 section:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);

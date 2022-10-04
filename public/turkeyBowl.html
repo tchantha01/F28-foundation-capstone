@@ -35,6 +35,23 @@
         <a href="home.html">Home</a>
     </nav>
 
+<div id="playerDisplay"></div>   
+
+<div>
+    <section id="addToPlayerCard">
+        <h3>Add player</h3>
+            
+        <input id="nameInput" placeholder="Name"/>
+            
+            <button onclick= "addPlayer()">Submit</button>
+
+    </section>
+</div>
+
+
+
+
+
 <div id="map"></div>
 
 <script>
@@ -51,7 +68,7 @@
         })
 
         const infoWindow = new google.maps.InfoWindow({
-            content: '<h2>Granger HS, WVC</h2>'
+            content: '<h2>Granger High School, WVC</h2>'
         })
 
         marker.addListener('click', function(){
@@ -66,7 +83,7 @@
 
 
 <script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV5WNjea9GUKHGoAkJcL2y4-ksiLCMOwk&callback=initMap&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV5WNjea9GUKHGoAkJcL2y4-ksiLCMOwk&callback=initMap"
     defer
 ></script>
 <script src="../node_modules/axios/dist/axios.min.js"></script>
