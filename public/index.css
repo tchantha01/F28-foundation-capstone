@@ -34,6 +34,15 @@ div {
   align-items: center;
 }
 
+#map {
+  height: 400px;
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .guest-card {
   background-color: antiquewhite;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -43,6 +52,7 @@ div {
   margin: 10px;
 
 }
+
 
 #addToGuestCard {
   background-color: antiquewhite;
@@ -57,7 +67,7 @@ div {
 
 
 section:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 
 
 }
