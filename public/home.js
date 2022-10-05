@@ -47,7 +47,7 @@ const updateGuest = (event) => {
         
         displayGuest(res.data)
     })
-
+    alert('Confirm update')
 }
 
 const createGuestCard = (guest) => {
@@ -75,7 +75,7 @@ const deleteGuest = (id) => {
             showGuest.innerHTML = ""
             displayGuest(res.data)
         })
-
+    alert('Confirm recipe delete')
 }
 
 const addGuest = () => {

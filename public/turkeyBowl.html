@@ -7,21 +7,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
 
-    <style>
-        /* #map {
-            height: 400px;
-            width: 600px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        } */
-
-    </style>
+    
 
 </head>
 
 <body>
+
+    <header>
+        <h1>Turkey Bowl</h1>
+    </header>    
+
+
+
     <style>
         body {
           background-image: url('https://media-api.xogrp.com/images/86a5cdee-07e2-4cc6-95d3-ef4b468c3a67');
@@ -34,6 +31,7 @@
     <nav>
         <a href="home.html">Home</a>
     </nav>
+
 
 <div id="playerDisplay"></div>   
 
@@ -49,12 +47,14 @@
 </div>
 
 
+<h4>This year's game will be held at Granger High School's football field.
+    (3580 S 3600 W, West Valley City, UT 84119) Please dress accordingly, meet on the field by 11am. 
+</h4>
 
-
-
-<div id="map"></div>
+<div id="map">
 
 <script>
+    
     function initMap() {
         const options = {
             zoom: 10,
@@ -77,9 +77,10 @@
 
     }
 
-    window.initMap = initMap
+ 
 
 </script>
+</div>
 
 
 <script 

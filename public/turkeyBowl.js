@@ -47,14 +47,17 @@ const addPlayer = () => {
 
     axios.post(`${baseURL}/addPlayer`, newPlayer) 
     .then((res) => {
+        
         showPlayer.innerHTML = ""
 
         nameInput.value = ""
         
-
+        
         displayPlayer(res.data)
+       
     })
-}
+    
+} 
 
 const deletePlayer = (id) => {
     axios.delete(`${baseURL}/deletePlayer/${id}`)
@@ -62,7 +65,7 @@ const deletePlayer = (id) => {
             showPlayer.innerHTML = ""
             displayPlayer(res.data)
         })
-
+        alert('Confirm player delete')
 }
 
 getAllPlayers()

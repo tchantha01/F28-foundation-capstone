@@ -87,6 +87,8 @@ module.exports = {
         const index = players.findIndex(element => element.id === +req.params.id)
 
         players.splice(index, 1)
+        
+        
 
         res.status(200).send(players)
     }
