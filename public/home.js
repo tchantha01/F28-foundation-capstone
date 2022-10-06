@@ -26,6 +26,7 @@ const displayGuest = (arr) => {
 
 const updateGuest = (event) => {
     event.preventDefault()
+    alert('Updated recipe')
     let nameInput = document.querySelector('#nameInput1')
     let dishInput = document.querySelector('#dishInput1')
     let commentInput = document.querySelector('#commentInput1')
@@ -47,7 +48,7 @@ const updateGuest = (event) => {
         
         displayGuest(res.data)
     })
-    alert('Confirm update')
+    
 }
 
 const createGuestCard = (guest) => {
@@ -55,7 +56,7 @@ const createGuestCard = (guest) => {
     guestCard.classList.add('guest-card')
 
     guestCard.innerHTML = `
-        <h2>Recipes</h2>   
+        <h2>Recipe</h2>   
         <p>${guest.name}</p>
         <p>${guest.dish}</p>
         <p>${guest.comment}</p>
@@ -67,7 +68,7 @@ const createGuestCard = (guest) => {
     showGuest.appendChild(guestCard)
 }
 
-//  <button onclick="updateGuest('${guest.id}', '${guest.name}', '${guest.dish}', '${guest.comment}')">Update</button>
+
 
 const deleteGuest = (id) => {
     axios.delete(`${baseURL}/deleteGuest/${id}`)
@@ -75,7 +76,7 @@ const deleteGuest = (id) => {
             showGuest.innerHTML = ""
             displayGuest(res.data)
         })
-    alert('Confirm recipe delete')
+    alert('Recipe deleted')
 }
 
 const addGuest = () => {
@@ -100,10 +101,11 @@ const addGuest = () => {
 
         displayGuest(res.data)
     })
+    alert('New recipe added')
 }
 
 updateGuestBtn.addEventListener("click", updateGuest)
-// addGuestBtn.addEventListener("submit", addGuest)
+
 
 getAllGuest()
 

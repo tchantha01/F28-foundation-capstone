@@ -6,23 +6,32 @@ body {
     
   }
 
+header {
+  text-align: center;
+   background-color: wheat;
+   color:darkorange;
+   font-family: 'Lucida Sans';
+}  
+
 nav {
    text-align: center;
    background-color: wheat;
    color:darkorange;
+   font-family: 'Lucida Sans';
 }
 
 a {
   margin: 20px;
   color: black;
   text-decoration: none;
+  font-family: 'Lucida Sans';
 }
 
 h1 {
   background-color: opacity transparent;
   color:rgba(255, 140, 0, 0.841);
   text-align: center;
-  
+  font-family: 'Lucida Sans';
 }
 
 #guestDisplay {
@@ -31,6 +40,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  font-family: 'Lucida Sans';
 }
 
 div {
@@ -64,7 +74,7 @@ h4 {
   border: 15px solid darkorange;
   padding: 30px;
   margin: 10px;
-
+  font-family: 'Lucida Sans';
 }
 
 .guest-card {
@@ -74,7 +84,7 @@ h4 {
   border: 15px solid darkorange;
   padding: 30px;
   margin: 10px;
-
+  font-family: 'Lucida Sans';
 }
 
 .player-card {
@@ -84,7 +94,7 @@ h4 {
   border: 15px solid darkorange;
   padding: 30px;
   margin: 10px;
-
+  font-family: 'Lucida Sans';
 }
 
 
@@ -96,6 +106,7 @@ h4 {
   border: 15px solid darkorange;
   padding: 30px;
   margin: 10px;
+  font-family: 'Lucida Sans';
 }
 
 #addToPlayerCard {
@@ -106,6 +117,7 @@ h4 {
   border: 15px solid darkorange;
   padding: 30px;
   margin: 10px;
+  font-family: 'Lucida Sans';
 }
 
 section:hover {
@@ -123,6 +135,7 @@ form {
   border: 15px solid darkorange;
   padding: 30px;
   margin: 10px;
+  font-family: 'Lucida Sans';
 
   }
   

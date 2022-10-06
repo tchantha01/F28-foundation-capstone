@@ -15,6 +15,10 @@
 
     <header>
         <h1>Turkey Bowl</h1>
+    
+        <nav>
+            <a href="home.html">Home</a>
+        </nav>
     </header>    
 
 
@@ -28,9 +32,7 @@
         }
         </style>
 
-    <nav>
-        <a href="home.html">Home</a>
-    </nav>
+   
 
 
 <div id="playerDisplay"></div>   
@@ -74,6 +76,20 @@
         marker.addListener('click', function(){
             infoWindow.open(map, marker)
         })
+
+        const marker1 = new google.maps.Marker({
+            position:{lat: 40.660327, lng: -112.026172},
+            map: map
+        })
+
+        const infoWindow1 = new google.maps.InfoWindow({
+            content: '<h2>Hosting House</h2>'
+        })
+
+        marker1.addListener('click', function(){
+            infoWindow1.open(map, marker1)
+        })
+
 
     }
 

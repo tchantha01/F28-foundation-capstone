@@ -56,7 +56,7 @@ const addPlayer = () => {
         displayPlayer(res.data)
        
     })
-    
+    alert('New player added')
 } 
 
 const deletePlayer = (id) => {
@@ -69,3 +69,5 @@ const deletePlayer = (id) => {
 }
 
 getAllPlayers()
+
+
